@@ -40,7 +40,7 @@ ls $3
 
 if [ -d "$ENV_DIR" ]; then
   echo "Exporting config vars to environment"
-  export_env_dir $env_dir
+  export_env_dir $ENV_DIR
 fi
 
 echo "after"
