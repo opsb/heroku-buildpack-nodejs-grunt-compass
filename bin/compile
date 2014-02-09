@@ -43,7 +43,7 @@ ls $3
 
 
 if [ -d "$ENV_DIR" ]; then
-  status "Exporting config vars to environment"
+  echo "Exporting config vars to environment"
   export_env_dir $env_dir
 fi
 
