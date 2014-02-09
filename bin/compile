@@ -10,10 +10,12 @@ function export_env_dir() {
       echo "$e" | grep -E "$whitelist_regex" | grep -qvE "$blacklist_regex" &&
       export "$e=$(cat $env_dir/$e)"
       :
-      echo "exporting $e=$(cat $env_dir/$e)"
     done
   fi
 }
+
+echo "after"
+env
 
 # fail fast
 set -e
