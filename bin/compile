@@ -6,8 +6,7 @@ function export_env_dir() {
   whitelist_regex=${2:-''}
   blacklist_regex=${3:-'^(PATH|GIT_DIR|CPATH|CPPATH|LD_PRELOAD|LIBRARY_PATH)$'}
     for e in $(ls $env_dir); do
-      echo "Checking $e"
-      export "$e=$(cat $env_dir/$e)" && echo "exported $e=$(cat $env_dir/$e)"
+      export "$e=$(cat $env_dir/$e)"
     done
 }
 
@@ -29,21 +28,12 @@ BUILD_DIR=$1
 CACHE_DIR=$2
 ENV_DIR=$3
 
-echo "args"
-echo $@
-
-echo "env dir"
-ls $3
-
-
-
-
 if [ -d "$ENV_DIR" ]; then
   echo "Exporting config vars to environment"
   export_env_dir $ENV_DIR
 fi
 
-echo "after"
+echo "Using env"
 env
 
 LP_DIR=`cd $(dirname $0); cd ..; pwd`
