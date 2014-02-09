@@ -42,7 +42,7 @@ export_env_dir() {
   fi
 }
 
-if [ -d "$env_dir" ]; then
+if [ -d "$ENV_DIR" ]; then
   status "Exporting config vars to environment"
   export_env_dir $env_dir
 fi
