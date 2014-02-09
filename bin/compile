@@ -25,8 +25,6 @@ echo $@
 echo "env dir"
 ls $3
 
-echo "env"
-env | sort
 
 export_env_dir() {
   env_dir=$1
