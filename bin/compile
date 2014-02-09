@@ -22,6 +22,9 @@ ENV_DIR=$3
 echo "args"
 echo $@
 
+echo "env dir"
+ls $3
+
 echo "env"
 env | sort
 
